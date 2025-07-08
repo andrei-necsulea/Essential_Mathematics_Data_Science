@@ -15,10 +15,13 @@ from scipy.stats import uniform
 def visualize_uniform_distribution(n_values=[10, 100, 1000, 10000], a=5, b=12):
     for n in n_values:
         data = uniform.rvs(loc=a, scale=b-a, size=n)
+        #distributed generated values between 4 and 13
         x = np.linspace(a - 1, b + 1, 1000)
+        #probability density function
         y = uniform.pdf(x, loc=a, scale=b-a)
 
         plt.figure(figsize=(10, 5))
+        #kde = kernel density estimation(for estimating distribution of probability of a variable) = a continue variant for histogram
         sns.histplot(data, kde=True, stat='density', bins=30, color='skyblue', edgecolor='black', label="Sampled + KDE")
 
         plt.plot(x, y, 'r-', lw=2, label='Theoretical PDF')

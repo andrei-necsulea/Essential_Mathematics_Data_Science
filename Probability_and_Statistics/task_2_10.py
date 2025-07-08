@@ -18,10 +18,12 @@ from scipy.stats import binom, bernoulli
 def compare_binomial_sampling(n=10, p=0.5, sample_sizes=[10, 100, 1000, 10000]):
     for s in sample_sizes:
         #normal binomial distribution - theoretical
+        #pmf = probability mass function, exactly probability of a result
         x = np.arange(0, n+1)
         binomial_pmf = binom.pmf(x, n=n, p=p)
 
         #bernoulli distribution simulated by use of variables
+        #rvs = random variates sampling, used for generating random values for a distribution
         simulated_sample = [bernoulli.rvs(p=p, size=n).sum() for _ in range(s)]
 
         plt.figure(figsize=(10, 5))

@@ -6,7 +6,7 @@ with parameters n and p, ie. X∼Bin(n,p).
 
 An outcome of tossing a coin can be desribed
 by a disrete random variable with a Bernoulli distribution with parameter
-p=12 as we see in EX. 2.1.
+p=1//2 as we see in EX. 2.1.
 Perform an experiment to know the number of trials with exactly x heads (H).
 
 Write a function that allows for such simulations and accepts

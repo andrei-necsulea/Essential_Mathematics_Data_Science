@@ -47,7 +47,9 @@ plt.show()
 desc_stats = df.drop(columns=['target', 'species']).describe().T
 
 # Add 10th and 90th percentiles
+#first 10% of values
 desc_stats['10%'] = df.drop(columns=['target', 'species']).quantile(0.10)
+#last 10% of values
 desc_stats['90%'] = df.drop(columns=['target', 'species']).quantile(0.90)
 
 print(desc_stats)
